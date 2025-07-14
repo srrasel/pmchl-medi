@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "ec_chairman_messages",
+  "info": {
+    "singularName": "ec-chairman-message",
+    "pluralName": "ec-chairman-messages",
+    "displayName": "Ec Chairman Message"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "QualificationsSummary": {
+      "type": "text"
+    },
+    "Position": {
+      "type": "string"
+    },
+    "HospitalName": {
+      "type": "string"
+    },
+    "sisterConcernText": {
+      "type": "string"
+    },
+    "profileImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "MessageContent": {
+      "type": "blocks"
+    }
+  }
+}
