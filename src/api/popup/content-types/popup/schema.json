@@ -20,6 +20,9 @@
         "videos",
         "audios"
       ]
+    },
+    "URL": {
+      "type": "string"
     }
   }
 }
