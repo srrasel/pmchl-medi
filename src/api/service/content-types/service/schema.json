@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "doctors",
+  "collectionName": "services",
   "info": {
-    "singularName": "doctor",
-    "pluralName": "doctors",
-    "displayName": "Doctor"
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "service"
   },
   "options": {
     "draftAndPublish": true
@@ -14,24 +14,13 @@
     "Name": {
       "type": "string"
     },
-    "Specialty": {
+    "category": {
       "type": "string"
     },
-    "Qualifications": {
-      "type": "text"
-    },
-    "Position": {
-      "type": "string"
-    },
-    "Bio": {
+    "Description": {
       "type": "blocks"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "Name",
-      "required": true
-    },
-    "image": {
+    "Image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
