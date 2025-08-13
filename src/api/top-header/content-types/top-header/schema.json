@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "top_headers",
+  "info": {
+    "singularName": "top-header",
+    "pluralName": "top-headers",
+    "displayName": "Top Header"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Emergency": {
+      "type": "string"
+    },
+    "Hotline": {
+      "type": "string"
+    }
+  }
+}

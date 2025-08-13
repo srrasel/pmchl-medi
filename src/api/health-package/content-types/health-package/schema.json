@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "galleries",
+  "collectionName": "health_packages",
   "info": {
-    "singularName": "gallery",
-    "pluralName": "galleries",
-    "displayName": "Gallery"
+    "singularName": "health-package",
+    "pluralName": "health-packages",
+    "displayName": "HealthPackage"
   },
   "options": {
     "draftAndPublish": true
@@ -14,7 +14,10 @@
     "Title": {
       "type": "string"
     },
-    "image": {
+    "ShortDescription": {
+      "type": "string"
+    },
+    "Image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -24,15 +27,8 @@
         "audios"
       ]
     },
-    "Galleryimages": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "Description": {
+      "type": "blocks"
     }
   }
 }

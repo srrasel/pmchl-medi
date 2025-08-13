@@ -533,6 +533,40 @@ export interface ApiClientClient extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDepartmentDepartment extends Struct.CollectionTypeSchema {
+  collectionName: 'departments';
+  info: {
+    displayName: 'Department';
+    pluralName: 'departments';
+    singularName: 'department';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Category: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Blocks;
+    DoctorsCount: Schema.Attribute.Integer;
+    Established_Year: Schema.Attribute.Integer;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::department.department'
+    > &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    ShortDescription: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDoctorDoctor extends Struct.CollectionTypeSchema {
   collectionName: 'doctors';
   info: {
@@ -630,6 +664,39 @@ export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHealthPackageHealthPackage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'health_packages';
+  info: {
+    displayName: 'HealthPackage';
+    pluralName: 'health-packages';
+    singularName: 'health-package';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Blocks;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::health-package.health-package'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    ShortDescription: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -723,6 +790,38 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSpecialitySectionSpecialitySection
+  extends Struct.SingleTypeSchema {
+  collectionName: 'speciality_sections';
+  info: {
+    displayName: 'Speciality-section';
+    pluralName: 'speciality-sections';
+    singularName: 'speciality-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::speciality-section.speciality-section'
+    > &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    ShortDescription: Schema.Attribute.String;
+    TopText: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSuccessStorySuccessStory
   extends Struct.CollectionTypeSchema {
   collectionName: 'success_stories';
@@ -752,6 +851,35 @@ export interface ApiSuccessStorySuccessStory
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     videourl: Schema.Attribute.String;
+  };
+}
+
+export interface ApiTopHeaderTopHeader extends Struct.CollectionTypeSchema {
+  collectionName: 'top_headers';
+  info: {
+    displayName: 'Top Header';
+    pluralName: 'top-headers';
+    singularName: 'top-header';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Emergency: Schema.Attribute.String;
+    Hotline: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::top-header.top-header'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1325,13 +1453,17 @@ declare module '@strapi/strapi' {
       'api::board-chairman-message.board-chairman-message': ApiBoardChairmanMessageBoardChairmanMessage;
       'api::ceo-message.ceo-message': ApiCeoMessageCeoMessage;
       'api::client.client': ApiClientClient;
+      'api::department.department': ApiDepartmentDepartment;
       'api::doctor.doctor': ApiDoctorDoctor;
       'api::ec-chairman-message.ec-chairman-message': ApiEcChairmanMessageEcChairmanMessage;
       'api::gallery.gallery': ApiGalleryGallery;
+      'api::health-package.health-package': ApiHealthPackageHealthPackage;
       'api::hero.hero': ApiHeroHero;
       'api::popup.popup': ApiPopupPopup;
       'api::service.service': ApiServiceService;
+      'api::speciality-section.speciality-section': ApiSpecialitySectionSpecialitySection;
       'api::success-story.success-story': ApiSuccessStorySuccessStory;
+      'api::top-header.top-header': ApiTopHeaderTopHeader;
       'api::video.video': ApiVideoVideo;
       'api::why-choose-us.why-choose-us': ApiWhyChooseUsWhyChooseUs;
       'plugin::content-releases.release': PluginContentReleasesRelease;

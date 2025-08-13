@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "departments",
+  "info": {
+    "singularName": "department",
+    "pluralName": "departments",
+    "displayName": "Department"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Category": {
+      "type": "string"
+    },
+    "ShortDescription": {
+      "type": "string"
+    },
+    "DoctorsCount": {
+      "type": "integer"
+    },
+    "Established_Year": {
+      "type": "integer"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Description": {
+      "type": "blocks"
+    }
+  }
+}
