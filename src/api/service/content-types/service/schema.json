@@ -17,8 +17,8 @@
     "category": {
       "type": "string"
     },
-    "Description": {
-      "type": "blocks"
+    "ShortDescription": {
+      "type": "string"
     },
     "Image": {
       "type": "media",
@@ -29,6 +29,9 @@
         "videos",
         "audios"
       ]
+    },
+    "Description": {
+      "type": "blocks"
     }
   }
 }
